@@ -2,9 +2,14 @@
 
 use App\Models\Obat;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ObatController;
+
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\JadwalPeriksaController;
+use App\Http\Controllers\Dokter\ObatController;
+use App\Http\Controllers\Dokter\MemeriksaController;
+use App\Http\Controllers\Pasien\JanjiPeriksaController;
+use App\Http\Controllers\Dokter\JadwalPeriksaController;
+use App\Http\Controllers\pasien\RiwayatPeriksaController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,12 +46,28 @@ Route::middleware('auth')->group(function () {
             Route::patch('/{id}', [JadwalPeriksaController::class, 'update'])->name('dokter.jadwal-periksa.update');
             Route::delete('/destroy/{id}', [JadwalPeriksaController::class, 'destroy'])->name('dokter.jadwal-periksa.destroy');
         });
+        Route::prefix('memeriksa')->group(function(){
+        Route::get('/', [MemeriksaController::class, 'index'])->name('dokter.memeriksa.index');
+        Route::post('/{id}', [MemeriksaController::class, 'store'])->name('dokter.memeriksa.store');
+        Route::get('/{id}/periksa', [MemeriksaController::class, 'periksa'])->name('dokter.memeriksa.periksa');
+        Route::get('/{id}/edit', [MemeriksaController::class, 'edit'])->name('dokter.memeriksa.edit');
+        Route::patch('/{id}', [MemeriksaController::class, 'update'])->name('dokter.memeriksa.update');
+    });
     });
 
      Route::middleware(['role:pasien'])->prefix('pasien')->group(function () {
         Route::get('/', function () {
             return view('dashboard');
         })->name('dashboard');
+         Route::prefix('janji-periksa')->group(function () {
+            Route::get('/', [JanjiPeriksaController::class, 'index'])->name('pasien.janji-periksa.index');
+            Route::post('/', [JanjiPeriksaController::class, 'store'])->name('pasien.janji-periksa.store');
+        });
+        Route::prefix('riwayat-periksa')->group(function () {
+            Route::get('/', [RiwayatPeriksaController::class, 'index'])->name('pasien.riwayat-periksa.index');
+            Route::get('/{id}/detail', [RiwayatPeriksaController::class, 'detail'])->name('pasien.riwayat-periksa.detail');
+            Route::get('/{id}/riwayat', [RiwayatPeriksaController::class, 'riwayat'])->name('pasien.riwayat-periksa.riwayat');
+        });
     });
 });
 

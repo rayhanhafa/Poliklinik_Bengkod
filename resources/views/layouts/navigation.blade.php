@@ -29,9 +29,18 @@
                     <x-nav-link :href="route('dokter.obat.index')" :active="request()->routeIs('dokter.obat.*')">
                          {{ __('Manajemen Obat') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dokter.memeriksa.index')" :active="request()->routeIs('dokter.memeriksa.*')">
+                         {{ __('Manajemen Periksa') }}
+                    </x-nav-link>
                     @else
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                     <x-nav-link :href="route('pasien.janji-periksa.index')" :active="request()->routeIs('pasien.janji-periksa.*')">
+                         {{ __('Janji Periksa') }}
+                    </x-nav-link>
+                     <x-nav-link :href="route('pasien.riwayat-periksa.index')" :active="request()->routeIs('pasien.riwayat-periksa.*')">
+                         {{ __('Riwayat Periksa') }}
                     </x-nav-link>
                     @endif
                 </div>
