@@ -12,11 +12,17 @@
                 {{-- Judul dan tombol tambah jadwal --}}
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-900">Daftar Jadwal Periksa</h3>
+
                     <a href="{{ route('dokter.jadwal-periksa.create') }}"
-                       class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
-                        + Tambah Jadwal
+                    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                        </svg>
+                        Tambah Jadwal
                     </a>
                 </div>
+
 
                 {{-- Menampilkan flash message sukses --}}
                 @if (session('success'))

@@ -72,8 +72,13 @@
                     </div>
 
                     <div class="mt-4">
-                        <a href="{{ route('pasien.riwayat-periksa.index') }}" class="btn btn-secondary">
-                            <i class="bi bi-arrow-left me-1"></i> Kembali
+                        <a href="{{ route('pasien.riwayat-periksa.index') }}" 
+                         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-lg shadow hover:bg-gray-700 transition-all duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Kembali
                         </a>
                     </div>
                 </section>
