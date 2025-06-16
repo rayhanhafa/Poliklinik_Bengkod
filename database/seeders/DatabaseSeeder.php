@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PasienSeeder::class,
             JadwalPeriksaSeeder::class,
             ObatSeeder::class,
+            PoliSeeder::class,
         ]);
     }
 }

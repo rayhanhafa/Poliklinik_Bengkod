@@ -42,6 +42,7 @@ class MemeriksaController extends Controller
         return view('dokter.memeriksa.edit')->with([
             'janjiPeriksa' => $janjiPeriksa,
             'obats' => $obats,
+            
         ]);
     }
 
@@ -82,7 +83,7 @@ class MemeriksaController extends Controller
             ]);
         }
 
-        return redirect()->route('dokter.memeriksa.index')->with('status', 'memeriksa-created');
+        return redirect()->route('dokter.memeriksa.index')->with('success', 'Berhasil Memeriksa.');
     }
 
     public function update(Request $request, $id)
@@ -116,6 +117,6 @@ class MemeriksaController extends Controller
             ]);
         }
 
-        return redirect()->route('dokter.memeriksa.index')->with('status', 'memeriksa-updated');
+        return redirect()->route('dokter.memeriksa.index')->with('success', 'Berhasil Update.');
     }
 }

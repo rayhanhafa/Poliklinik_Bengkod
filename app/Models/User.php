@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'id_poli',
         'nama',
         'email',
         'password',
@@ -26,8 +27,8 @@ class User extends Authenticatable
         'no_ktp',
         'no_hp',
         'no_rm',
-        'poli',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -61,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(JanjiPeriksa::class, 'id_pasien');
     }
+
+    public function polis()
+{
+    return $this->belongsTo(Poli::class, 'id_poli');
+}
 }

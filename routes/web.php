@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
             Route::delete('destroy/{id}', [ObatController::class, 'destroy'])->name('dokter.obat.destroy');
             Route::get('/trash', [ObatController::class, 'trash'])->name('dokter.obat.trash');
             Route::patch('/{id}', [ObatController::class, 'restore'])->name('dokter.obat.restore');
+            Route::delete('/force-delete/{id}', [ObatController::class, 'forceDelete'])->name('dokter.obat.force-delete');
+
         });
 
         Route::prefix('jadwal-periksa')->group(function () {

@@ -78,11 +78,27 @@
                                     <td class="px-4 py-2">{{ $obat->kemasan }}</td>
                                     <td class="px-4 py-2">Rp {{ number_format($obat->harga, 0, ',', '.') }}</td>
                                     <td class="px-4 py-2 space-x-2">
-                                    <form action="{{ route('dokter.obat.restore', $obat->id) }}" method="POST" style="display:inline-block;">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button type="submit" class="inline-block px-3 py-1 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-700">Restore</button>
-                                    </form>
+                                        <!-- Tombol Restore -->
+                                        <form action="{{ route('dokter.obat.restore', $obat->id) }}" method="POST" class="inline-block">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit"
+                                                class="px-3 py-1 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-700 transition">
+                                                Restore
+                                            </button>
+                                        </form>
+
+                                        <!-- Tombol Hapus Permanen -->
+                                        <form action="{{ route('dokter.obat.force-delete', $obat->id) }}" method="POST"
+                                            class="inline-block"
+                                            onsubmit="return confirm('Yakin ingin menghapus permanen?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="px-3 py-1 text-xs font-medium text-white bg-red-600 rounded hover:bg-red-700 transition">
+                                                Hapus Permanen
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

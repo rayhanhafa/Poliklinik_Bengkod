@@ -14,6 +14,27 @@
                     <h3 class="text-lg font-semibold text-gray-900">Daftar Periksa Pasien</h3>
                 </div>
 
+                {{-- Flash Messages --}}
+                @if (session('success'))
+                    <div class="relative p-4 mb-4 text-sm text-green-800 bg-green-100 border border-green-200 rounded">
+                        {{ session('success') }}
+                        <button type="button" onclick="this.parentElement.remove();"
+                                class="absolute top-2 right-2 text-green-800 hover:text-green-900">
+                            &times;
+                        </button>
+                    </div>
+                @endif
+
+                @if (session('danger'))
+                    <div class="relative p-4 mb-4 text-sm text-red-800 bg-red-100 border border-red-200 rounded">
+                        {{ session('danger') }}
+                        <button type="button" onclick="this.parentElement.remove();"
+                                class="absolute top-2 right-2 text-red-800 hover:text-red-900">
+                            &times;
+                        </button>
+                    </div>
+                @endif
+
                 {{-- Tabel --}}
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm text-left border border-gray-200 table-auto">
@@ -21,7 +42,8 @@
                             <tr>
                                 <th class="px-4 py-3">No Urut</th>
                                 <th class="px-4 py-3">Nama Pasien</th>
-                                <th class="px-4 py-3">Keluhan</th>
+                                <th class="px-4 py-3">Keluhan Pasien</th>
+                                <th class="px-4 py-3">Catatan Dokter</th>
                                 <th class="px-4 py-3">Aksi</th>
                             </tr>
                         </thead>
@@ -31,6 +53,7 @@
                                     <td class="px-4 py-2">{{ $janjiPeriksa->no_antrian }}</td>
                                     <td class="px-4 py-2">{{ $janjiPeriksa->pasien->nama }}</td>
                                     <td class="px-4 py-2">{{ $janjiPeriksa->keluhan }}</td>
+                                    <td class="px-4 py-2">{{ $janjiPeriksa->periksa->catatan ?? '-' }}</td>
                                     <td class="px-4 py-2">
                                         @if (is_null($janjiPeriksa->periksa))
                                             <a href="{{ route('dokter.memeriksa.periksa', $janjiPeriksa->id) }}"

@@ -71,7 +71,7 @@
                             <div><strong>Alamat:</strong> {{ Auth::user()->alamat }}</div>
 
                             @if (Auth::user()->role === 'dokter')
-                                <div><strong>Poli:</strong> {{ Auth::user()->poli }}</div>
+                                <div><strong>Poli:</strong> {{ Auth::user()->polis->nama_poli ?? '-' }}</div>
                             @elseif (Auth::user()->role === 'pasien')
                                 <div><strong>No. RM:</strong> {{ Auth::user()->no_rm }}</div>
                             @endif

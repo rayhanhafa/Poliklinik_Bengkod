@@ -22,7 +22,7 @@ class PasienSeeder extends Seeder
                 'alamat' => 'Jl. Mangga No. 10, Jakarta Selatan',
                 'no_ktp' => '3175062501800006',
                 'no_hp' => '081234567895',
-                'poli' => null,
+                
             ],
             [
                 'nama' => 'Dewi Lestari',
@@ -32,7 +32,7 @@ class PasienSeeder extends Seeder
                 'alamat' => 'Jl. Pisang No. 22, Jakarta Barat',
                 'no_ktp' => '3175062503810007',
                 'no_hp' => '081234567896',
-                'poli' => null,
+                
             ],
             [
                 'nama' => 'Rudi Hartono',
@@ -42,7 +42,7 @@ class PasienSeeder extends Seeder
                 'alamat' => 'Jl. Apel No. 5, Jakarta Timur',
                 'no_ktp' => '3175062504820008',
                 'no_hp' => '081234567897',
-                'poli' => null,
+                
             ],
             [
                 'nama' => 'Sari Ayu',
@@ -52,7 +52,7 @@ class PasienSeeder extends Seeder
                 'alamat' => 'Jl. Duku No. 3, Jakarta Pusat',
                 'no_ktp' => '3175062505830009',
                 'no_hp' => '081234567898',
-                'poli' => null,
+                
             ],
             [
                 'nama' => 'Bambang Susilo',
@@ -62,7 +62,7 @@ class PasienSeeder extends Seeder
                 'alamat' => 'Jl. Salak No. 15, Jakarta Utara',
                 'no_ktp' => '3175062506840010',
                 'no_hp' => '081234567899',
-                'poli' => null,
+                
             ],
         ];
 
