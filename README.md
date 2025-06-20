@@ -149,3 +149,5 @@ php artisan serve
 ```
 
 ### 11. Akses Aplikasi melalui Browser
+
+https://drive.google.com/drive/folders/19sPRNJ7sHMCWnE-EM7FKJDr6P0BIYuEQ?usp=sharing
