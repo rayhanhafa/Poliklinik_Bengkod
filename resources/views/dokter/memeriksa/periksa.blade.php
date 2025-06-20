@@ -44,7 +44,7 @@
 
                             <div class="mb-3 form-group">
                                 <label for="obat">Pilih
-                                    Obat</label>
+                                        Obat</label>
                                 <select class="rounded form-control" id="obat" name="obat[]" multiple
                                     onchange="hitungBiaya()">
                                     @foreach ($obats as $obat)
@@ -75,7 +75,7 @@
                                 Simpan
                             </button>
                         </form>
-
+   
                         <script>
                             function hitungBiaya() {
                                 const baseBiaya = 150000;
